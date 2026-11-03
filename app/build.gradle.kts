@@ -37,7 +37,12 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.constraintlayout)
     implementation(libs.material)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(libs.ext.junit)
+
+    implementation(libs.snmp4j)
+    implementation(libs.org.eclipse.paho.client.mqttv3)
+    implementation(libs.documentfile)
 }
