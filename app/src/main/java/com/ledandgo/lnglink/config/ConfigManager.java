@@ -14,30 +14,27 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
 public class ConfigManager {
-
-    private static final String TAG = "LnGLink";
-    private static final String CONFIG_PATH = "/storage/emulated/0/Documents/config.json";
     private final File configFile;
 
-    public ConfigManager() { this(new File(CONFIG_PATH)); }
+    public ConfigManager() { this(new File(GlobalReferences.CONFIG_PATH)); }
 
     public ConfigManager(File configFile) { this.configFile = configFile; }
 
     public JSONObject loadConfig() throws IOException, JSONException {
 
-        if (!configFile.exists()) throw new IOException("No existe config.json");
+        if (!configFile.exists()) throw new IOException("No existe config.json.");
 
         if (!configFile.isFile())
-            throw new IOException("La ruta especificada no corresponde con un archivo");
+            throw new IOException("La ruta especificada no corresponde con un archivo.");
 
         if (!configFile.canRead())
-            throw new IOException("No hay permisos suficientes para leer el archivo de configuración");
+            throw new IOException("No hay permisos suficientes para leer el archivo de configuración.");
 
-        Log.i(TAG, "Leyendo configuración");
+        Log.i(GlobalReferences.TAG, "[CONFIG] Leyendo configuración.");
 
         JSONObject config = getConfig(configFile);
 
-        Log.i(TAG, "Configuración cargada correctamente.");
+        Log.i(GlobalReferences.TAG, "[CONFIG] Configuración cargada correctamente.");
 
         return config;
     }
@@ -58,7 +55,7 @@ public class ConfigManager {
 
         if (json.startsWith("\uFEFF")) json = json.substring(1);
 
-        if (json.isEmpty()) throw new IOException("El archivo de configuración está vacio.");
+        if (json.isEmpty()) throw new IOException("[CONFIG] El archivo de configuración está vacio.");
 
         return new JSONObject(json);
     }
