@@ -1,0 +1,18 @@
+{
+    "basic": {
+        "deviceID": "Identificador del dispositivo",
+        "IPServer": "IP del Servidor",
+        "PortServer": "Puerto del Servidor (Número entero)",
+        "sendInterval": "Intervalo de envío de datos al servidor en segundos (Número entero)",
+        "company": "Nombre de la empresa del proyecto. EJ: CCH",
+        "project": "Nombre del proyecto. EJ: Sevilla",
+        "username": "Usuario de InfluxDB (Si existe) para guardar datos en el servidor",
+        "password": "Contraseña de InfluxDB (Si existe) para guardar datos en el servidor"
+    },
+    "hardware": {
+        "IPIvy": "IP de la Ivy",
+        "IPConversor": "IP del Conversor RS232 to ETH",
+        "PortConversor": "Puerto del Conversor RS232 to ETH (Número entero)",
+        "readInterval": "Intervalo de lecturas de datos en segundos (Número entero)"
+    }
+}
